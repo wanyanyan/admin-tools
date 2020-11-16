@@ -125,7 +125,7 @@ export const convert2geojson = (data, options) => {
       let fdata = getFeatureData(adminValue, item)
       let fdata1 = getFeatureData(adminValue1, item)
       if (fdata && fdata1) {
-        features.push(turf.linestring([fdata.coords, fdata1.coords], fdata1.properties))
+        features.push(turf.lineString([fdata.coords, fdata1.coords], fdata1.properties))
       }
     }
   })
