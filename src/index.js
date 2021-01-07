@@ -5,7 +5,7 @@ import * as turf from '@turf/helpers'
 // 给定 admin code，返回 admin 级别
 // 省市县的 admin code 是6位格式，乡镇为8位格式
 // 返回值：1 -- 省；2 -- 市；3 -- 县；4 -- 乡镇; 0 -- 全国 -1 -- 无效
-const getAdminType = code => {
+export const getAdminType = code => {
   if (code.length == 8) {
     return 4
   }
@@ -132,3 +132,10 @@ export const convert2geojson = (data, options) => {
   return turf.featureCollection(features)
 }
 
+export const isMunicipality = (code) => {
+  if (!isAdminCode(code)) {
+    throw new Error('错误：未指定行政区划代码')
+  }
+  code = String(code)
+  return ['110000', '120000', '310000', '500000'].indexOf(code) !== -1
+}

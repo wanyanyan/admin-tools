@@ -17,6 +17,22 @@ AdminTools.getAdminDataByCode(adminCode)
 
 ## API
 
+### `.getAdminType(code: String)`
+
+参数 | 类型 | 是否必须 | 说明
+--- | --- | --- | ---
+code | String | 是 | 行政区划代码，例如"110000"
+
+获取行政区划级别，1 -- 省；2 -- 市；3 -- 县；4 -- 乡镇; 0 -- 全国 -1 -- 无效
+
+### `.isMunicipality(code: String)`
+
+参数 | 类型 | 是否必须 | 说明
+--- | --- | --- | ---
+code | String | 是 | 行政区划代码，例如"110000"
+
+给定的行政区是否为直辖市
+
 ### `.getAdminDataByName(name: String, searchArea: String)`
 
 参数 | 类型 | 是否必须 | 说明
